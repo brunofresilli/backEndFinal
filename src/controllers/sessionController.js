@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 const User = require('../dao/models/user.js');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 const { createToken } = require('../utils/jwtUtils.js');
 require('dotenv').config();
 const logger = require('../utils/logger');
@@ -73,13 +73,13 @@ const restoreConfirm = async (req, res) => {
           return res.status(404).send({ status: "error", message: "Usuario no encontrado" });
       }
 
-      const isSamePassword = await bcrypt.compare(password, user.password);
+      const isSamePassword = await bcryptjs.compare(password, user.password);
       if (isSamePassword) {
           logger.warn('Attempt to use the same password during reset', { email: decoded.email });
           return res.status(400).send({ status: "error", message: "No puedes usar la misma contraseña" });
       }
 
-      const hashedPassword = await bcrypt.hash(password, 12);
+      const hashedPassword = await bcryptjs.hash(password, 12);
       user.password = hashedPassword;
       await user.save();
 
