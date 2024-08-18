@@ -68,15 +68,15 @@ const swaggerOptions = {
 };
 const specs = swaggerJsdoc(swaggerOptions);
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
+app.use(express.static(path.join(__dirname, '../public')));
+app.use('/uploads', express.static(path.join(__dirname, '../public/uploads')));
 
 
 // Handlebars
 const hbs = exphbs.create();
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.set('views', path.join(__dirname, 'src', 'views'));
+app.set('views', path.join(__dirname,  'views'));
 
 // Middlewares
 
