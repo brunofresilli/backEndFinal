@@ -1,0 +1,29 @@
+<div class="purchase-container">
+    <h1>Compra Completada</h1>
+    <p><strong>Código de Ticket:</strong> {{ticket.code}}</p>
+    <p><strong>Fecha de Compra:</strong> {{ticket.purchase_datetime}}</p>
+    <p><strong>Comprador:</strong> {{ticket.purchaser}}</p>
+    <p><strong>Total:</strong> {{ticket.amount}}</p>
+
+    <h2>Productos Comprados</h2>
+    <ul>
+      {{#each ticket.products}}
+        <li>
+          <strong>Producto:</strong> {{this.product.title}}<br>
+          <strong>Cantidad:</strong> {{this.quantity}}<br>
+          <strong>Precio:</strong> {{this.product.price}}
+        </li>
+      {{/each}}
+    </ul>
+
+    {{#if productsNotPurchased.length}}
+      <h2>Productos No Comprados</h2>
+      <ul>
+        {{#each productsNotPurchased}}
+          <li>Producto ID: {{this}}</li>
+        {{/each}}
+      </ul>
+    {{/if}}
+  </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<div class="box">
+    <h1>Productos</h1>
+    <h2>Bienvenido {{username}}</h2>
+    
+    <div class="pagination">
+        <a href="/{{userId}}" class="goto-cart">Ir al carrito</a>
+        <!-- Botón para cargar nuevos productos -->
+        <a href="/productos/nuevo" class="goto-upload">Cargar nuevo producto</a>
+    </div>
+
+    <div class="cards-container">
+        {{#if result.isValid}}
+        <div class="cards-grid">
+            {{#each result.docs}}
+            <div class="card">
+                <h3>{{this.title}}</h3>
+                <hr>
+                <p>Categoría: {{this.category}}</p>
+                <p>Descripción: {{this.description}}</p>
+                <p>Precio: $ {{this.price}}</p>
+                <button class="button-addCart" data-product-id="{{this._id}}" data-cart-id="{{../userId}}">Agregar al carrito</button>
+            </div>
+            {{/each}}
+        </div>
+        <hr>
+        <div class="pagination">
+            <div>
+                {{#if result.hasPrevPage}}
+                <a href="{{result.prevLink}}" class="prev"><< Anterior</a>
+                {{/if}}
+            </div>
+            <br>
+            <div>
+                {{#if result.hasNextPage}}
+                <a href="{{result.nextLink}}" class="next">Siguiente >></a>
+                {{/if}}
+            </div>
+        </div>
+        {{else}}
+        <h2>No hay productos para mostrar</h2>
+        {{/if}}
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/js/product.js"></script>

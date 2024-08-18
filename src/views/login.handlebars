@@ -1,0 +1,38 @@
+ <div class="login-container">
+    <h1>Login</h1>
+    <hr>
+
+    <form class="login-form" method="post" action="/api/sessions/login">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+      </div>
+
+      <button type="submit" class="submit-btn">Login</button>
+    </form>
+
+    <div class="auth-links">
+      <a href="/api/sessions/github" class="auth-btn">Entrar con Github</a>
+      <a href="/restore" class="auth-btn">Olvidé mi contraseña</a>
+    </div>
+
+    <div class="register-link">
+      <a href="/register">No tienes una cuenta? Regístrate aquí</a>
+    </div>
+  </div>
+
+  {{#if failLogin}}
+    <script type="text/javascript">
+      alert('Login Failed!');
+    </script>
+  {{/if}}
+  {{#if registerSuccess}}
+    <script type="text/javascript">
+      alert('Register Success!');
+    </script>
+  {{/if}}

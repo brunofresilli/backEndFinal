@@ -1,0 +1,303 @@
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.button-addCart {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button-addCart:hover {
+  background-color: #0056b3;
+}
+  
+  .card-info {
+    padding: 15px;
+    text-align: center; 
+  }
+  
+  .card-info h2 {
+    margin-top: 0;
+  }
+  
+  .card-info p {
+    margin: 5px 0;
+  }
+  
+  
+  #formAgregarProducto {
+    margin-top: 20px; 
+  }
+  
+  #formAgregarProducto div {
+    margin-bottom: 10px; 
+  }
+  
+  #formAgregarProducto label {
+    display: block; 
+  }
+  
+  #formAgregarProducto input[type="text"],
+  #formAgregarProducto input[type="number"],
+  #formAgregarProducto textarea {
+    width: 100%; 
+    padding: 5px; 
+    margin-top: 5px; 
+    box-sizing: border-box; 
+  }
+  
+  #formAgregarProducto button {
+    background-color: #007bff;
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer; 
+  }
+  
+  #formAgregarProducto button:hover {
+    background-color: #0056b3; 
+  }
+  .delete-button {
+    background-color: #dc3545; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 5px 10px; 
+    cursor: pointer; 
+    transition: background-color 0.3s;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    
+}
+
+.button-container {
+    text-align: center; 
+    
+    
+}
+
+.prev, .next, .goto-cart {
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 10px 5px;
+  text-align: center;
+}
+
+.prev:hover, .next:hover, .goto-cart:hover {
+  background-color: #0056b3;
+}
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 20px;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.purchase-container {
+  background-color: #fff;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+p, li {
+  color: #555;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f9f9f9;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+li strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+
+input[type="file"] {
+  display: block;
+  margin-top: 5px;
+}
+
+small {
+  display: block;
+  color: #666;
+}
+
+.upload {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.auth-links {
+  margin: 20px 0;
+}
+
+.auth-btn {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 10px;
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.auth-btn:hover {
+  background-color: #218838;
+}
+
+.register-link {
+  margin-top: 20px;
+}
+
+.register-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}

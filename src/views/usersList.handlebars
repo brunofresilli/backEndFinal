@@ -1,0 +1,15 @@
+<body>
+  <h1>Users List</h1>
+  <ul>
+    {{#each users}}
+      <li>
+        <p>User: {{this.email}}</p>
+        <p>Current Role: {{this.role}}</p>
+        <button onclick="changeUserRole('{{this._id}}', '{{this.role}}')">Change Role</button>
+      </li>
+    {{/each}}
+  </ul>
+  <button id="deleteInactiveUsers">Delete Inactive Users</button>
+  <script src="/js/changeRole.js"></script>
+  <script src="/js/deleteInactiveUsers.js"></script>
+</body>

@@ -1,0 +1,46 @@
+<body>
+    <div class="container">
+        <h1>Cargar Nuevo Producto</h1>
+        
+        <form id="productForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Título:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Descripción:</label>
+                <textarea id="description" name="description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="code">Código:</label>
+                <input type="text" id="code" name="code" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Precio:</label>
+                <input type="number" id="price" name="price" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Estado:</label>
+                <select id="status" name="status">
+                    <option value="true">Disponible</option>
+                    <option value="false">No Disponible</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="stock">Stock:</label>
+                <input type="number" id="stock" name="stock" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Categoría:</label>
+                <input type="text" id="category" name="category" required>
+            </div>
+            <div class="form-group">
+                <label for="thumbnails">Imágenes:</label>
+                <input type="file" id="thumbnails" name="thumbnails" multiple>
+            </div>
+            <button type="submit">Cargar Producto</button>
+        </form>
+    </div>
+
+   <script src="/js/submitProducts.js"></script><!-- Asegúrate de apuntar a tu archivo JS -->
+</body>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subir Archivos</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Subir Archivos</h1>
+    <form id="uploadForm" enctype="multipart/form-data" data-user-id="{{userId}}">
+      <div class="form-group">
+        <label for="profile">Imagen de Perfil:</label>
+        <input type="file" id="profile" name="profile"  />
+        <small>Sube una imagen para tu perfil.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="product">Imagen del Producto:</label>
+        <input type="file" id="product" name="product"  />
+        <small>Sube una imagen del producto que quieres añadir.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="document">Documentos:</label>
+        <input type="file" id="document" name="document" multiple />
+        <small>Selecciona uno o varios documentos.</small>
+      </div>
+
+      <button class="upload" type="submit">Subir Archivos</button>
+    </form>
+  </div>
+
+  <script src="/js/upload.js"></script>
+</body>
+</html>

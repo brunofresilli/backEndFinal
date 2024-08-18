@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: my-app
+    repo: https://github.com/brunofresilli/BrunoFresilliBackEnd
+    branch: main
+    buildCommand: 'npm install'  # o 'npm install' si usas npm
+    startCommand: 'node Desktop/BrunoFresilliBackEnd/app.js'
+    env:
+      NODE_ENV: production
+    autoDeploy: true

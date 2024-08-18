@@ -1,0 +1,13 @@
+<body>
+  
+    <form action="/api/sessions/restoreConfirm" method="POST" id="resetPasswordForm">
+        <input type="hidden" name="access_token" value="{{access_token}}">
+        <input type="password" name="password" id="password" required placeholder="Nueva Contraseña">
+        <button type="submit">Restablecer Contraseña</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/restore.js"></script>
+    <script src="/js/messageHandler.js"></script>
+
+</body>
