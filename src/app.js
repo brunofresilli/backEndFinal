@@ -11,16 +11,16 @@ const cookieParser = require('cookie-parser');
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUiExpress = require('swagger-ui-express');
 
-const { addLogger, logger } = require('./src/utils/logger.js'); 
-const config = require('./src/config/config.js');
-const websocket = require('./websocket.js');
-const cartsRouter = require('./src/routes/cartsRouter.js');
-const productsRouter = require('./src/routes/productsRouter.js');
-const viewsRouter = require('./src/routes/viewsRouter.js');
-const sessionRouter = require('./src/routes/sessionRouter.js');
-const initializatePassport = require('./src/config/passportConfig.js');
-const errorHandler = require('./src/middlewares/errors/index.js');
-const usersRouter = require ('./src/routes/usersRouter.js');
+const { addLogger, logger } = require('./utils/logger.js'); 
+const config = require('./config/config.js');
+const websocket = require('../websocket.js');
+const cartsRouter = require('./routes/cartsRouter.js');
+const productsRouter = require('./routes/productsRouter.js');
+const viewsRouter = require('./routes/viewsRouter.js');
+const sessionRouter = require('./routes/sessionRouter.js');
+const initializatePassport = require('./config/passportConfig.js');
+const errorHandler = require('./middlewares/errors/index.js');
+const usersRouter = require ('./routes/usersRouter.js');
 
 const app = express();
 
