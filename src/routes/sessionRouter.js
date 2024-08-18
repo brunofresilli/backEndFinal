@@ -13,19 +13,20 @@ router.post("/login", (req, res, next) => {
     passport.authenticate('login', async (err, user, info) => {
         if (err) {
             console.error('Error durante el inicio de sesión:', err);
-            req.session.failLogin = true;
+            req.session.failLogin = { message: 'Error durante el inicio de sesión.' };
             return res.redirect('/login');
         }
         if (!user) {
             console.log('Inicio de sesión fallido:', info ? info.message : 'No se proporcionó un mensaje de error.');
-            req.session.failLogin = true;
+            req.session.failLogin = { message: info ? info.message : 'Credenciales inválidas.' };
             return res.redirect('/login');
         }
-        
+
         try {
             const dbUser = await User.findById(user._id);
             if (!dbUser) {
                 console.error('Usuario no encontrado en la base de datos');
+                req.session.failLogin = { message: 'Usuario no encontrado.' };
                 return res.redirect('/login');
             }
 
@@ -35,7 +36,7 @@ router.post("/login", (req, res, next) => {
             req.logIn(user, (err) => {
                 if (err) {
                     console.error('Error al iniciar sesión:', err);
-                    req.session.failLogin = true;
+                    req.session.failLogin = { message: 'Error al iniciar sesión.' };
                     return res.redirect('/login');
                 }
 
@@ -48,7 +49,7 @@ router.post("/login", (req, res, next) => {
             });
         } catch (saveError) {
             console.error('Error al actualizar el campo last_connection:', saveError);
-            req.session.failLogin = true;
+            req.session.failLogin = { message: 'Error al actualizar la conexión.' };
             return res.redirect('/login');
         }
     })(req, res, next);

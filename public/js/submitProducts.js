@@ -6,13 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         const formData = new FormData(form);
 
-        // Convertir FormData a URLSearchParams
+       
         const urlSearchParams = new URLSearchParams();
         formData.forEach((value, key) => {
             urlSearchParams.append(key, value);
         });
 
-        // Depuración: Imprimir datos a enviar
+       
         for (const [key, value] of urlSearchParams.entries()) {
             console.log(`${key}: ${value}`);
         }
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (response.ok) {
-                // Aquí puedes manejar el éxito, por ejemplo, mostrar una alerta
+               
                 alert('Producto guardado con éxito');
             } else {
                 const errorText = await response.text();
@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.getElementById('productForm').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Evita el envío estándar del formulario
+    event.preventDefault(); 
 
-     // Asegúrate de reemplazar con el token JWT válido
+     
 
     const productData = {
         title: document.getElementById('title').value,
@@ -69,7 +69,7 @@ document.getElementById('productForm').addEventListener('submit', async function
 
         if (data.status === 'success') {
             alert('Producto guardado con éxito');
-            // No rediriges, sólo muestras un mensaje
+            
         } else {
             alert(`Error al cargar el producto: ${data.message}`);
         }

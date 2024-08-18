@@ -3,7 +3,7 @@ services:
     name: my-app
     repo: https://github.com/brunofresilli/BrunoFresilliBackEnd
     branch: main
-    buildCommand: 'npm install'  # o 'npm install' si usas npm
+    buildCommand: 'npm install'  
     startCommand: 'node Desktop/BrunoFresilliBackEnd/app.js'
     env:
       NODE_ENV: production

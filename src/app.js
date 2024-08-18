@@ -81,7 +81,7 @@ app.set('views', path.join(__dirname,  'views'));
 // Middlewares
 
 app.use(addLogger); 
-app.use(express.urlencoded({ extended: true })); // Para procesar application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true })); 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());

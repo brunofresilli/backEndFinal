@@ -10,7 +10,7 @@ router.post('/productos',
     authorize("admin", "premium"),
     async (req, res) => {
         try {
-            // Asegúrate de que esta lógica no dependa del carrito de compras
+            
             console.log('Datos recibidos:', req.body);
 
             const productData = {
@@ -21,17 +21,17 @@ router.post('/productos',
                 status: req.body.status === 'true',
                 stock: parseInt(req.body.stock, 10),
                 category: req.body.category,
-                owner: req.user.role || 'admin'  // Esto asigna el rol actual como owner
+                owner: req.user.role || 'admin' 
             };
 
             console.log('Datos procesados:', productData);
 
-            // Validar los datos antes de guardar
+           
             if (isNaN(productData.price) || isNaN(productData.stock)) {
                 return res.status(400).send('Precio o stock inválidos');
             }
 
-            // Guardar el producto en la base de datos
+            
             const nuevoProducto = new productModel(productData);
             await nuevoProducto.save();
 
@@ -110,8 +110,8 @@ router.delete('/:pid', passport.authenticate("jwt", { session: false }), async (
         if (!deletedProduct) {
             res.status(404).json({ error: 'Producto no encontrado' });
         } else {
-            // Enviar correo de notificación al propietario del producto
-            const ownerEmail = product.owner;  // Suponiendo que el campo 'owner' contiene el email del propietario
+           
+            const ownerEmail = product.owner;  
             const mailOptions = {
                 from: 'tu-email@example.com',
                 to: ownerEmail,

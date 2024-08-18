@@ -4,7 +4,7 @@ document.getElementById('deleteInactiveUsers').addEventListener('click', async (
       if (response.ok) {
         const result = await response.json();
         alert(result.message);
-        location.reload(); // Refrescar la página para reflejar los cambios
+        location.reload(); 
       } else {
         const errorData = await response.json();
         alert(`Error: ${errorData.message}`);
